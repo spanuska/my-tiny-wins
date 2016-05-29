@@ -1,0 +1,2 @@
+module WinsHelper
+end

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wins.each do |win| %>
+      <tr>
+        <td><%= win.description %></td>
+        <td><%= link_to 'Show', win %></td>
+        <td><%= link_to 'Edit', edit_win_path(win) %></td>
+        <td><%= link_to 'Destroy', win, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Win', new_win_path %>
