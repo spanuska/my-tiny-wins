@@ -7,6 +7,7 @@
       <div class="panel-body">
         <p><%= win.description %></p>
         <p><strong><%= win.user.name if win.user %></strong></p>
+        <p class="date"><%= win.created_at.strftime("%B %d, %Y") %></p>
 
         <% if current_user && (win.user == current_user) %>
           <div class="actions">
