@@ -6,4 +6,5 @@ class Win < ActiveRecord::Base
 
   validates :image, presence: true
   validates :description, presence: true
+  
 end

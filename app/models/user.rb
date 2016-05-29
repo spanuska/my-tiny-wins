@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :wins, dependent: :destroy
 
+  validates :name, presence: true
 end
