@@ -1,5 +1,7 @@
 class WinsController < ApplicationController
   before_action :set_win, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /wins
   # GET /wins.json
