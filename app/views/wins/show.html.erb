@@ -1,9 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @win.description %>
-</p>
-
-<%= link_to 'Edit', edit_win_path(@win) %> |
 <%= link_to 'Back', wins_path %>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+    <div class="panel-heading center">
+      <%= image_tag @win.image.url(:medium) %>
+    </div>
+    <div class="panel-body">
+    <p><%= @win.description %></p>
+    <p><strong><%= @win.user.name if @win.user %></strong></p>
+
+
+    <% if @win.user == current_user %>
+      <%= link_to edit_win_path(@win) do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        Edit
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
+</div>

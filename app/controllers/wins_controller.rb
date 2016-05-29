@@ -11,19 +11,19 @@ class WinsController < ApplicationController
   end
 
   def new
-    @win = current_user.wins.build # creates new win through current user
+    @win = current_user.wins.build 
   end
 
   def edit
   end
 
   def create
-    @win = current_user.wins.build
-      if @win.save
+    @win = current_user.wins.build(win_params)
+    if @win.save
         redirect_to @win, notice: 'Win was successfully created.'
-      else
+    else
         render :new
-      end
+    end
   end
 
   def update
@@ -50,6 +50,6 @@ class WinsController < ApplicationController
     end
 
     def win_params
-      params.require(:win).permit(:description)
+      params.require(:win).permit(:description, :image)
     end
 end
