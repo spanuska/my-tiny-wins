@@ -10,7 +10,7 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 
-  <%= render 'layouts/header' %> <!-- this is the _header partial -->
+  <%= render 'layouts/nav' %> <!-- this is the _header partial -->
   <div class="container"> <!-- this centers the yield -->
     <% flash.each do |name, msg| %>
      <%= content_tag(:div, msg, class: "alert alert-info") %>
