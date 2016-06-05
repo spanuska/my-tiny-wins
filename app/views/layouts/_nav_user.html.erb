@@ -18,7 +18,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/avatar.png" class="rounded-img" height="25px" width="25px"> <span class="caret"></span></a>
           
           <ul class="dropdown-menu">
-            <li><a href="/user/<%= current_user.name %>">Profile</a></li>
+            <li><a href="/user/<%= current_user.username %>">Profile</a></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Account Settings", edit_user_registration_path %></li>
             <li role="separator" class="divider"></li>
