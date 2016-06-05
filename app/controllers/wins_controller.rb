@@ -4,7 +4,7 @@ class WinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @wins = Win.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
+    @wins = Win.where(public: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -50,6 +50,6 @@ class WinsController < ApplicationController
     end
 
     def win_params
-      params.require(:win).permit(:description, :image)
+      params.require(:win).permit(:description, :image, :public)
     end
 end

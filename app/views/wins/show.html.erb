@@ -8,7 +8,7 @@
     </div>
     <div class="panel-body">
     <p><%= @win.description %></p>
-    <p><strong><%= @win.user.name if @win.user %></strong></p>
+    <p><strong><%= @win.user.username if @win.user %></strong></p>
 
 
     <% if @win.user == current_user %>
