@@ -8,11 +8,11 @@ class Win < ActiveRecord::Base
   validates :description, presence: true
   
   def self.filter_by_user_id(id)
-    where("user_id = ?", User.find(id))
+    where("user_id = ?", id)
   end
   
   def self.filter_by_user_id_public(id)
-    where(public: true).where("user_id = ?", User.find(id))
+    where(public: true).where("user_id = ?", id)
   end
 
 end
