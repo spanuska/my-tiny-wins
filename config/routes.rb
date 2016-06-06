@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'profile/show'
+  # get 'profile/show'
 
   resources :wins
+  get '/users/:id' => 'profile#show'
   
   devise_for :users
   root 'wins#index'
   get "about" => "pages#about" # about_path
-  get '/user/:id' => 'profile#show'
 
 end
