@@ -1,8 +1,7 @@
 class ProfileController < ApplicationController
-  before_action :is_profile_owner?, only: [:edit, :update, :destroy, :show]
 
   def show
-    if !User.find(params[:id])
+    if !User.exists?(params[:id])
       # redirect to 404 (root for now)
       redirect_to root_path, :notice => "User not found!"
     elsif is_profile_owner?
@@ -16,6 +15,6 @@ class ProfileController < ApplicationController
   private
 
     def is_profile_owner?
-      current_user.id == params[:id].to_i
+      current_user && current_user.id == params[:id].to_i
     end
 end
